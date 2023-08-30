@@ -86,9 +86,7 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.8.0)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -97,9 +95,6 @@ GEM
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    irb (1.7.4)
-      reline (>= 0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -175,9 +170,24 @@ GEM
     rake (13.0.6)
     redis (4.8.1)
     regexp_parser (2.8.1)
-    reline (0.3.8)
-      io-console (~> 0.5)
     rexml (3.2.6)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     rubocop (1.56.2)
       base64 (~> 0.1.1)
       json (~> 2.3)
@@ -239,13 +249,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
-  debug
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.7, >= 7.0.7.2)
   redis (~> 4.0)
+  rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
