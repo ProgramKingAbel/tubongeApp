@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   subject { Post.new(title: 'Sample Post', author: User.create(name: 'Morara'), comments_counter: 0, likes_counter: 0) }
 
   before { subject.save }
@@ -49,7 +48,7 @@ RSpec.describe Post, type: :model do
   describe '#top_five_comments' do
     it 'returns the five most recent comments' do
       user = User.create(name: 'Morara')
-      comment1 = Comment.create(author: user, post: subject, text: 'comment1', created_at: 5.days.ago)
+      Comment.create(author: user, post: subject, text: 'comment1', created_at: 5.days.ago)
       comment2 = Comment.create(author: user, post: subject, text: 'comment2', created_at: 4.days.ago)
       comment3 = Comment.create(author: user, post: subject, text: 'comment3', created_at: 3.days.ago)
       comment4 = Comment.create(author: user, post: subject, text: 'comment4', created_at: 2.days.ago)
@@ -64,4 +63,3 @@ RSpec.describe Post, type: :model do
     end
   end
 end
-
