@@ -1,0 +1,6 @@
+<h1>Home Page Displays all available users and their details </h1>
+
+
+<% @users.each do |user| %>
+  <p>User_name: <%= user.name%> User_id: <%= user.id %></p>
+<%end %>
