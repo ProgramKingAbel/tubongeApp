@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
-
-  describe "GET /users" do
-    it "renders the index template and assigns @users" do
+RSpec.describe 'Users', type: :request do
+  describe 'GET /users' do
+    it 'renders the index template and assigns @users' do
       # Simulate a GET request to the /users endpoint
       get users_path
 
@@ -18,8 +17,8 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe " Get /users/:id" do
-    it "renders the show template and assigns @user" do
+  describe ' Get /users/:id' do
+    it 'renders the show template and assigns @user' do
       # Create a sample user for testing
 
       user = User.create(
@@ -43,4 +42,3 @@ RSpec.describe "Users", type: :request do
     end
   end
 end
-

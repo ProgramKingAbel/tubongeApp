@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
-  describe "GET /users/:user_id/posts" do
-    it "renders the index template and assigns @user_posts" do
+RSpec.describe 'Posts', type: :request do
+  describe 'GET /users/:user_id/posts' do
+    it 'renders the index template and assigns @user_posts' do
       # Create a sample user and associated posts for testing
       user = User.create(
         name: 'Abel Morara',
@@ -25,16 +25,16 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
-  describe "GET /users/:user_id/posts/:id" do
-    it "renders the show template and assigns @user_post" do
+  describe 'GET /users/:user_id/posts/:id' do
+    it 'renders the show template and assigns @user_post' do
       # Create a sample user and associated post for testing
-         user = User.create(
+      user = User.create(
         name: 'Abel Morara',
         photo: 'https://example.com/photos/0X8086XX09',
         bio: 'test_bio',
         posts_counter: 1
       )
-       post = Post.create(
+      post = Post.create(
         author: user,
         title: 'Hello',
         text: 'This is my first post',
@@ -55,6 +55,4 @@ RSpec.describe "Posts", type: :request do
       expect(response.body).to include('<h1>Display a specific post and all its details here</h1 >')
     end
   end
-
 end
-
