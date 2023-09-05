@@ -40,7 +40,7 @@ RSpec.describe 'Users', type: :request do
       # Verify that the @user instance variable is assigned and contains the correct user
       expect(assigns(:user)).to eq(user)
 
-       # Verify that the response body includes correct placeholder text.
+      # Verify that the response body includes correct placeholder text.
       expect(response.body).to include('<h1> Displays each users Details </h1>')
     end
   end
