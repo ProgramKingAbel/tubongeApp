@@ -17,3 +17,10 @@
 .stats {
 	text-align: right;
 }
+
+.btn {
+	border: 2px solid black;
+	text-decoration: none;
+	padding: 0.5rem;
+	align-self: center;
+}
