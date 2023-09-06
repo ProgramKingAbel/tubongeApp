@@ -1,13 +1,16 @@
 .container {
 	width: 60%;
-	overflow-Y: scroll;
 	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	gap: 1rem;
 }
 
 .user-wrapper {
 	display: grid;
-	grid-template-columns: 1fr 4fr;
-	margin: 1rem;
+	grid-template-columns: 1fr 5fr;
+	gap: 1rem;
 }
 
 img {

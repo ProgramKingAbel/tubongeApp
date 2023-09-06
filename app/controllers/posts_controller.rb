@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_user
 
   def index
-    @user_posts = @user.posts
+    @user_posts = @user.posts.
   end
 
   def show
