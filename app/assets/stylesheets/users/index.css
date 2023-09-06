@@ -1,0 +1,35 @@
+.container {
+	width: 60%;
+	overflow-Y: scroll;
+	margin: 2rem auto;
+}
+
+.user-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	margin: 1rem;
+}
+
+img {
+	width: 150px;
+	aspect-ratio: 1;
+	border: 2px solid black;
+}
+
+.content {
+	display: flex;
+	border: 1px solid black;
+	justify-content: space-between;
+	padding: 0 2rem;
+	
+}
+
+.content h2 {
+	align-self: center;
+}
+
+.content p {
+	align-self: flex-end;
+}
+
+
