@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @user_post = @user.posts.find_by(id: params[:id])
+    @user = User.find(params[:user_id])
   end
 
   private
