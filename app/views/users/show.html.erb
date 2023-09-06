@@ -1,17 +1,13 @@
 
 <div class="container">
-  <%= render 'user', user: @user %>
+  <%= render partial: 'partials/user', locals: { user: @user } %>
   <div class="bio">
     <h3>Bio</h3>
     <p><%=@user.bio%></p>
   </div>
   <div class="posts">
     <% @user.posts.limit(3).each do |post| %>
-      <div class="post">
-        <h3><%= post.title %></h3>
-        <p><%= post.text %></p>
-        <p class="stats"> Comments: <%= post.comments_counter%> Likes: <%=post.likes_counter%> </p>
-      </div>
+      <%= render partial: 'partials/post', locals: { post: post} %>
     <% end %>
   </div>
   <%= link_to "See All Posts", user_posts_path(@user), class: "btn" %>

@@ -1,5 +1,5 @@
 <div class="container">
 <% @users.each do |user| %>
-<%= render 'user', user: user %>
+  <%= render partial: 'partials/user', locals: { user: user } %>
 <%end %>
 </div>
