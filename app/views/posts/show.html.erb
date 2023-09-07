@@ -8,7 +8,7 @@
   </div>
   <div class="comments-section">
     <%@user_post.comments.each do |comment| %>
-      <p><%=link_to comment.author, user_path(@user) %>: <%=comment.text%></p>
+      <p><%=link_to comment.author, user_path(comment.author) %>: <%=comment.text%></p>
     <%end%>
   </div>
 </div>
