@@ -1,0 +1,13 @@
+<h1> Create a comment on behalf of current user </h1>
+
+<%= form_with model: @comment do |form| %>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Comment for this Post" %>
+  </div>
+
+<% end %>
