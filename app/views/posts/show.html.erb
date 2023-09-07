@@ -3,7 +3,8 @@
     <p><%= @user_post.title%> by <%= link_to @user.name, user_path(@user) %> </p>
     <p>Comments: <%=@user_post.comments_counter%> Likes: <%=@user_post.likes_counter%></p>
   </div>
-  <p><%=@user_post.text%>
+  <p><%=@user_post.text%></p>
+  <p><%= render partial: 'partials/like_button', locals: { user: @user, post: @user_post, like: @like } %></p>
   </div>
   <div class="comments-section">
     <%@user_post.comments.each do |comment| %>
