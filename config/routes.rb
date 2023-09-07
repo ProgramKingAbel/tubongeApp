@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
-    get 'show_all', on: :member
+    resources :posts do
+      resources :comments, only: [:new, :create, :destroy]
+      resources :likes, only: [:create, :destroy]
+    end
   end
 
   root 'users#index'
