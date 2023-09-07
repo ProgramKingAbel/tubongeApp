@@ -2,3 +2,9 @@
 	border: 1px solid red;
 	padding: 1rem;
 }
+
+button {
+	width: 300px;
+	padding: 1rem;
+	align-self: center;
+}
