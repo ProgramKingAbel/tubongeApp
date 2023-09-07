@@ -5,28 +5,27 @@ class PostsController < ApplicationController
     @user_posts = @user.posts
   end
 
-  def new 
+  def new
     @user = current_user
     @post = Post.new
   end
 
-def create
-  @user = current_user
-  @post = @user.posts.build(post_params)
+  def create
+    @user = current_user
+    @post = @user.posts.build(post_params)
 
-  if @post.save
-    redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
-  else
-    render :new
+    if @post.save
+      redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
+    else
+      render :new
+    end
   end
-end
 
-def show
+  def show
     @user_post = @user.posts.find_by(id: params[:id])
     @user = User.find(params[:user_id])
-     @like = Like.new
+    @like = Like.new
   end
-
 
   private
 
@@ -35,6 +34,6 @@ def show
   end
 
   def post_params
-  params.require(:post).permit(:title, :text)
-end
+    params.require(:post).permit(:title, :text)
+  end
 end
