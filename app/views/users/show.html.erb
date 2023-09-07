@@ -1,3 +1,13 @@
-<h1> Displays each users Details </h1>
 
-<p>Name: <strong><%= @user.name %> id: <%=@user.id %></strong></p>
+  <%= render partial: 'partials/user', locals: { user: @user } %>
+  <div class="bio">
+    <h3>Bio</h3>
+    <p><%=@user.bio%></p>
+  </div>
+  <div class="posts">
+    <% @user.top_three_posts.each do |post| %>
+      <%= render partial: 'partials/post', locals: { post: post} %>
+    <% end %>
+  </div>
+  <%= link_to "See All Posts", user_posts_path(@user), class: "btn" %>
+</div>

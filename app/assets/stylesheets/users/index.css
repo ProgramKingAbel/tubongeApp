@@ -1,0 +1,35 @@
+.container {
+  width: 60%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.user-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
+}
+
+img {
+  width: 150px;
+  aspect-ratio: 1/1;
+  border: 2px solid black;
+}
+
+.content {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.content h2 {
+  align-self: center;
+}
+
+.content p {
+  align-self: flex-end;
+}
