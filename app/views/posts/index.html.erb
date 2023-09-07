@@ -2,7 +2,7 @@
    <% @user.posts.each do |post| %>
      <%= render partial: 'partials/post', locals: { post: post } %>
      <div class="all-comments">
-    <% post.comments.limit(5).each do |comment| %>
+    <% post.top_five_comments.each do |comment| %>
       <p><%=link_to comment.author, user_path(comment.author)%> :  <%=comment.text%></p>
     <% end %>
      </div>
