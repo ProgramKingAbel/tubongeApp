@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
-    get 'show_all', on: :member
+  resources :users do
+    resources :posts
   end
 
   root 'users#index'
