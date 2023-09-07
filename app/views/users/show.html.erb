@@ -1,5 +1,4 @@
 
-<div class="container">
   <%= render partial: 'partials/user', locals: { user: @user } %>
   <div class="bio">
     <h3>Bio</h3>
@@ -11,5 +10,4 @@
     <% end %>
   </div>
   <%= link_to "See All Posts", user_posts_path(@user), class: "btn" %>
-</div>
 </div>

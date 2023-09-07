@@ -1,10 +1,11 @@
 .p-content {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-.upper, .comments-section {
-	padding: 1rem;
-	border: 1px solid black;
+.upper,
+.comments-section {
+  padding: 1rem;
+  border: 1px solid black;
 }
