@@ -26,8 +26,9 @@ img {
   padding: 0 2rem;
 }
 
-.content h2 {
+.content .user-link {
   align-self: center;
+  font-size: 1.5rem;
 }
 
 .content p {
