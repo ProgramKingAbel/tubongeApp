@@ -18,7 +18,6 @@ RSpec.describe 'user index view page', type: :system do
       posts_counter: 10
     )
   end
-  
 
   let!(:user3) do
     User.create(

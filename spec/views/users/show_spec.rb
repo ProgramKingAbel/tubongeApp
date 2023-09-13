@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'user index view page', type: :system do
-   
   let!(:user1) do
     User.create(
       name: 'test user1',
@@ -19,19 +18,17 @@ RSpec.describe 'user index view page', type: :system do
     ]
   end
 
-
   describe 'user content and respective posts for that user' do
     before(:example) do
       visit user_path(user1)
     end
 
     it 'displays user specific information' do
-        expect(page).to have_content(user1.name)
-        expect(page).to have_content(user1.bio)
-        expect(page).to have_content(user1.posts_counter)
-        expect(page).to have_selector("img[src='#{user1.photo}']")
-      end
-     
+      expect(page).to have_content(user1.name)
+      expect(page).to have_content(user1.bio)
+      expect(page).to have_content(user1.posts_counter)
+      expect(page).to have_selector("img[src='#{user1.photo}']")
+    end
 
     it 'Can see the user first 3 posts' do
       expect(page).to have_content('Post 1 content')
