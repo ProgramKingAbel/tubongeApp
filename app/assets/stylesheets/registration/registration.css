@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.reg-header {
+  text-align: center;
+}
+
+.field-form {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 4px;
+  align-items: center;
+}
+
+input[type="submit"] {
+  align-self: center;
+}
+
+.log_in,
+.already,
+.confirmation,
+.forgot-password {
+  align-self: center;
+}
+
+.remember-me {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
