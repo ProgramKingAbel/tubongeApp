@@ -1,6 +1,6 @@
-<h2>Sign up</h2>
+<h2 class="reg-header">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'field-form' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -30,5 +30,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+<p class="already">Already have an Account?</p>
 
 <%= render "devise/shared/links" %>
