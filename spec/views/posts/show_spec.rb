@@ -34,6 +34,11 @@ RSpec.describe 'user index view page', type: :system do
     it 'shows posts author of the post' do
       expect(page).to have_content(user1.name)
     end
+
+    it 'Can see the post body' do
+      expect(page).to have_content(post1.text)
+    end
+
     it 'shows posts comments and likes' do
       expect(page).to have_content("Comments: #{post1.comments_counter}")
       expect(page).to have_content("Likes: #{post1.likes_counter}")

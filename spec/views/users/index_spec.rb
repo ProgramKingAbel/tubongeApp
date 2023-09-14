@@ -12,7 +12,7 @@ RSpec.describe 'user index view page', type: :system do
 
   let!(:user2) do
     User.create(
-      name: 'test user2',
+      name: 'testuser2',
       photo: 'https://lumiere-a.akamaihd.net/v1/images/ct_cinderella_upcportalreskin_20694_f7c876a1.jpeg?region=0,0,330,330',
       bio: 'Hello doing some tests here',
       posts_counter: 10
@@ -53,7 +53,9 @@ RSpec.describe 'user index view page', type: :system do
   end
 
   it 'redirects to the user\'s show page' do
-    visit user_path(user1)
+
+    click_link user2.name
+    # visit user_path(user1)
     expect(page).to have_current_path(user_path(user1))
     expect(page).to have_content(user1.name)
     expect(page).to have_content(user1.bio)
