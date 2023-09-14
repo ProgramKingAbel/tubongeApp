@@ -5,7 +5,8 @@ RSpec.describe 'Users', type: :system do
     before do
       allow_any_instance_of(ApplicationController)
         .to receive(:current_user)
-        .and_return(User.create(name: 'James', photo: 'https://placehold.co/100x100', bio: 'Program tester', posts_counter: 1))
+        .and_return(User.create(name: 'James', photo: 'https://placehold.co/100x100', bio: 'Program tester',
+                                posts_counter: 1))
       @first_user = User.create(name: 'Test', photo: 'https://placehold.co/105x105', bio: 'Fullstack developer')
       User.create(name: 'Abel', photo: 'https://placehold.co/110x110', bio: 'Fullstack developer')
       visit root_path
