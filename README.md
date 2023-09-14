@@ -121,6 +121,12 @@ To run tests, run the following command:
 - Twitter: [@CEOAbel1](https://twitter.com/CEOAbel1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abel-morara)
 
+### 👤 **Okolo Oshoke**
+
+- GitHub: [@lorenzoworx](https://github.com/lorenzoworx)
+- Twitter: [@lorenzoworx](https://twitter.com/lorenzoworx)
+- LinkedIn: [Oshoke Okolo](https://www.linkedin.com/in/oshokeokolo/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

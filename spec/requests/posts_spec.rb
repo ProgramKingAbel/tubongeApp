@@ -21,7 +21,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template(:index)
 
       # Includes correct placeholder content
-      expect(response.body).to include('<h1> Implement all posts for associated to a specific user</h1>')
+      expect(response.body).to include('<p>Number of posts: 0</p>')
     end
   end
 
@@ -52,7 +52,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template(:show)
 
       # Verify correct placeholder text
-      expect(response.body).to include('<h1>Display a specific post and all its details here</h1 >')
+      expect(response.body).to include('<p>This is my first post</p>')
     end
   end
 end

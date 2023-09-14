@@ -13,7 +13,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:index)
 
       # Verify that the response body includes correct placeholder text.
-      expect(response.body).to include('<h1>Home Page Displays all available users and their details </h1>')
+      expect(response.body).to include('<title>TubongeApp</title>')
     end
   end
 
@@ -41,7 +41,7 @@ RSpec.describe 'Users', type: :request do
       expect(assigns(:user)).to eq(user)
 
       # Verify that the response body includes correct placeholder text.
-      expect(response.body).to include('<h1> Displays each users Details </h1>')
+      expect(response.body).to include('<h3>Bio</h3>')
     end
   end
 end
