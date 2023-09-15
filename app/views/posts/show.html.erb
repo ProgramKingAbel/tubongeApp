@@ -1,13 +1,17 @@
-  <div class="upper">
+<div class="upper">
   <div class="p-content">
-    <p><%= @user_post.title%> by <%= link_to @user.name, user_path(@user) %> </p>
-    <p>Comments: <%=@user_post.comments_counter%> Likes: <%=@user_post.likes_counter%></p>
+    <p><%= @user_post.title %> by <%= link_to @user.name, user_path(@user) %></p>
+    <p>Comments: <%= @user_post.comments_counter %> Likes: <%= @user_post.likes_counter %></p>
   </div>
-  <p><%=@user_post.text%></p>
+  <p><%= @user_post.text %></p>
   <p><%= render partial: 'partials/like_button', locals: { user: @user, post: @user_post, like: @like } %></p>
-  </div>
-  <div class="comments-section">
-    <%@user_post.comments.each do |comment| %>
-      <p><%=link_to comment.author, user_path(comment.author) %>: <%=comment.text%></p>
-    <%end%>
-  </div>
+  <% if can? :destroy, @user_post %>
+    <%= link_to 'Delete', user_post_path(@user, @user_post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger' %>
+  <% end %>
+</div>
+
+<div class="comments-section">
+  <% @user_post.comments.each do |comment| %>
+    <p><%= link_to comment.author, user_path(comment.author) %>: <%= comment.text %></p>
+  <% end %>
+</div>

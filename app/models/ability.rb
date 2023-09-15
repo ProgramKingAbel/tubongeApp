@@ -11,6 +11,15 @@ class Ability
     #   return unless user.admin?
     #   can :manage, :all
     #
+    user ||= User.new # Guest user (not logged in)
+
+    if user.admin?
+      can :manage, :all # Admin can manage all resources
+    else
+      can :manage, Post, author_id: user.id # User can manage their own posts
+      cannot :destroy, Post # User can't destroy posts (unless they are an admin)
+    end
+    
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions

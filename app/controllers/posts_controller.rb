@@ -6,14 +6,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @post = Post.new
   end
 
   def create
-    @user = current_user
     @post = @user.posts.build(post_params)
-
     if @post.save
       redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
     else
@@ -22,10 +19,18 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])
     @user = User.includes(posts: :comments).find(params[:user_id])
+    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])  
     @like = Like.new
   end
+
+  def destroy
+    @user = User.includes(posts: :comments).find(params[:user_id])
+    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])  
+      @user_post.destroy
+      redirect_to user_posts_path(@user), notice: 'Post was successfully deleted.'
+  end
+  
 
   private
 
