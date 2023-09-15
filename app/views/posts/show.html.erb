@@ -6,7 +6,7 @@
   <p><%= @user_post.text %></p>
   <p><%= render partial: 'partials/like_button', locals: { user: @user, post: @user_post, like: @like } %></p>
   <% if can? :destroy, @user_post %>
-    <%= link_to 'Delete', user_post_path(@user, @user_post), data: { turbo_method: :destroy, turbo_confirm: 'Are you sure you want to delete this post?' }%>
+    <%= link_to 'Delete', user_post_path(@user, @user_post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this post?' }%>
   <% end %>
 </div>
 
@@ -14,7 +14,7 @@
   <% @user_post.comments.each do |comment| %>
     <p><%= link_to comment.author, user_path(comment.author) %>: <%= comment.text %></p>
     <% if can? :destroy, comment %>
-        <%= link_to 'Delete', user_post_comment_path(@user, @user_post, comment), data: { turbo_method: :destroy, turbo_confirm: 'Are you sure you want to delete this comment?' }%>
+        <%= link_to 'Delete', user_post_comment_path(@user, @user_post, comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this comment?' }%>
       <% end %>
   <% end %>
 </div>
