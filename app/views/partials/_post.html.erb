@@ -2,5 +2,6 @@
         <h3><%= link_to post.title, user_post_path(user_id: @user.id, id: post.id) %></h3>
         <p><%= post.text %></p>
         <p class="stats"> Comments: <%= post.comments_counter%> Likes: <%=post.likes_counter%> </p>
+        
 
     </div>
