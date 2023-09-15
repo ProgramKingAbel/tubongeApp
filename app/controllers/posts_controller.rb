@@ -20,17 +20,16 @@ class PostsController < ApplicationController
 
   def show
     @user = User.includes(posts: :comments).find(params[:user_id])
-    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])  
+    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])
     @like = Like.new
   end
 
   def destroy
     @user = User.includes(posts: :comments).find(params[:user_id])
-    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])  
-      @user_post.destroy
-      redirect_to user_posts_path(@user), status: :see_other
+    @user_post = @user.posts.includes(:comments).find_by(id: params[:id])
+    @user_post.destroy
+    redirect_to user_posts_path(@user), status: :see_other
   end
-  
 
   private
 

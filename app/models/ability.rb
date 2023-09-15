@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -16,8 +14,10 @@ class Ability
     if user.admin?
       can :manage, :all # Admin can manage all resources
     else
-      can [:read, :create], [Post, Comment] # Users can read and create their own posts and comments
-      can [:update, :destroy], [Post, Comment], author_id: user.id # Users can update and destroy their own posts and comments
+      # Users can read and create their own posts and comments
+      can %i[read create], [Post, Comment]
+      # Users can update and destroy their own posts and comments
+      can %i[update destroy], [Post, Comment], author_id: user.id
     end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
