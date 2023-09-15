@@ -10,7 +10,13 @@ class Api::V1::CommentsController < ApplicationController
   # POST http://127.0.0.1:3000/api/v1/users/1/posts/102/comments
   def create
     @user = current_user
-    @comment = @post.comments.build(comment_params.merge(author: @user))
+
+    @user_id = params[:comment][:author_id] 
+  
+    # Debugging output
+    puts "Author ID from params: #{@user_id}"
+
+    @comment = @post.comments.build(text: comment_params[:text], author_id: @user_id)
 
     if @comment.save
       render json: @comment, status: :created
@@ -24,6 +30,6 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:text, :author_id)
   end
 end
