@@ -24,7 +24,7 @@
 # 📖 tubongeApp Blog App<a name="about-project"></a>
 
 **tubongeApp Blog App** is an social blog full stack web app built using Ruby on Rails, allowing users to create, read, comment on, and like posts like in normal blogs.
-It demonstrates the four principles of OOP. (Abstraction, Encapsulation, Inheritance and polymorphism)
+It demonstrates the four principles of OOP. Abstraction, Encapsulation, Inheritance and polymorphism
 
 ## 🛠 Built With <a name="built-with"></a>
 
